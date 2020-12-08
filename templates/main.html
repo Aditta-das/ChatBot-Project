@@ -1,0 +1,78 @@
+{% extends "layers.html" %}
+{% block body %}
+
+<!----- logo ----->
+<div class="col">
+    <div class="text-center">
+        <a class="brand" style="" href="#">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" style="width: 58px; height: 76px; margin-top: 30px;"/>
+        </a>
+    </div>
+
+<!--- logo end --->
+
+<!-- Search form -->
+    <form method="POST" class="search">
+        <header class="search" style="margin-top:66px;">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="query" placeholder="Search...">
+                        <button type="submit" name="submit" value="search" class="search_icon"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </form>
+    
+
+<!-- end search -->
+    <div class="container d-flex justify-content-center mt-100">
+        <div class="row">
+            {% for b in best_results %}
+            <div class="col-md-3">
+                <div class="product-wrapper mb-45 text-center" style="max-height: 277px;">
+                    <div class="product-img"> 
+                        <a href="#" data-abc="true">
+                            <img src="{{ b.img }}" alt="" style="max-width: 234px;max-height: 251px;min-width: 234px;min-height: 251px"> 
+                        </a> 
+                        <span class="text-center"> Tk. {{ b.prices_of_prod }}</span>
+                        <div class="product-action">
+                            <div class="product-action-style"> <a href="#"> <i class="fa fa-plus"></i> </a> <a href="#"> <i class="fa fa-heart"></i> </a> <a href="#"> <i class="fa fa-shopping-cart"></i> </a> </div>
+                        </div>
+                    </div>
+                    <span class="text-center"> {{ b.tit }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="col-md-3">
+                <div class="product-wrapper mb-45 text-center">
+                    <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ url_for('static', filename='img/tL7ZE46.jpg') }}" alt=""> </a> <span>41,000</span>
+                        <div class="product-action">
+                            <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa fa-plus"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"> <i class="fa fa-heart"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa fa-shopping-cart"></i> </a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-wrapper mb-45 text-center">
+                    <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ url_for('static', filename='img/tL7ZE46.jpg') }}" alt=""> </a> <span>33,000</span>
+                        <div class="product-action">
+                            <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa fa-plus"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"> <i class="fa fa-heart"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa fa-shopping-cart"></i> </a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-wrapper mb-45 text-center">
+                    <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ url_for('static', filename='img/tL7ZE46.jpg') }}" alt=""> </a> <span>23,000</span>
+                        <div class="product-action">
+                            <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa fa-plus"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"> <i class="fa fa-heart"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa fa-shopping-cart"></i> </a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
